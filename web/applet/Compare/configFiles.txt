@@ -1,0 +1,3 @@
+books/bakbook.properties
+books/bookme.properties
+books/booksrus.properties

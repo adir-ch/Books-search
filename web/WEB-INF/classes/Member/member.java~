@@ -1,0 +1,68 @@
+package Member; 
+
+import java.io.Serializable;
+
+public class member implements Serializable
+{
+    
+    private String firstName;
+    private String password;
+    private String lastName;
+    private String email;
+    private String phone;
+    private String id;
+    private boolean mailRecipent;
+    
+          
+    public member(String id,String password, String first, String last, String phone, String email, boolean mail) {
+        this.id = id;
+        this.password = password;
+        this.firstName = first;
+        this.lastName = last;
+        this.phone = phone;
+        this.email = email;
+        this.mailRecipent = mail;
+    }
+    
+    public boolean validateEmailAddress()
+    {
+        return this.email.matches(".*@.*");
+    }
+    
+    public boolean compare(String id, String pass)
+    {
+        return (this.id.equals(id) && this.password.equals(pass));
+    }
+    
+    public boolean compare(String id)
+    {
+        return (this.id.equalsIgnoreCase(id));
+    }
+      
+    public String getId()
+    {
+        return this.id;
+    }
+    
+    public String getFirst() {
+        return this.firstName;
+    }
+    public String getLast() {
+        return this.lastName;
+    }
+    public String getEmail() {
+        return this.email;
+    }
+    public String getPhone() {
+        return this.phone;
+    }
+    public boolean wantsMail()
+    {
+        return this.mailRecipent;
+    }
+    
+    public String toString()
+    {
+        return this.id + " " + this.firstName + " " + this.lastName;
+    }
+}

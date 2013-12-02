@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : booksrus.xml
+    Created on : 21 פברואר 2003, 04:16
+    Author     : administrator
+    Description:
+        BooksRus parsing info.
+-->
+
+<root>
+    <general-info>
+        <name><![CDATA[Booksrus]]></name>
+        <site-url><![CDATA[http://www.booksrus.co.il]]></site-url>
+        <method><![CDATA[post]]></method>
+        <image><![CDATA[pictures/booksrus.gif]]></image>
+    </general-info>
+
+    <addresses>    
+        <Address-String><![CDATA[http://www.booksrus.co.il/app/Results.asp]]></Address-String>
+        <Query-string><![CDATA[Diff=ABCDEF&SW=2&p=]]></Query-string>
+        <Search-string-writer><![CDATA[Diff=C&SW=2&p=]]></Search-string-writer>
+    </addresses>
+    
+    <parser-info>
+    
+       <results-search>
+            <product-not-found><![CDATA[<span class=\"txt14b\">נמצאו 0 כותרים</span>]]></product-not-found>
+            <results-start-regexp><![CDATA[<span class=\"txt14b\">]]></results-start-regexp>
+            <results-end-regexp><![CDATA[(<span class=\"txt14b\">נמצאו *. המלצות</span>)|src=\"\.\./Images/b_next.gif\">|(All Rights Reserved)]]></results-end-regexp>          
+        </results-search>
+    
+        <product-name-search>
+            <product-name-start-regexp><![CDATA[((<A class=\"ProdHead\" href=\"Product.asp).(Param=)([0-9]+))\">]]></product-name-start-regexp>
+            <product-name-end-regexp><![CDATA[</a></td></tr><tr><form action=|</a></td><td rowspan=\"2\" align=\"right\" width=\"40\">|</a><!-- &nbsp;]]></product-name-end-regexp>
+        </product-name-search>
+        
+        <product-price-search>
+            <product-price-start-regexp><![CDATA[<span class=\"txt13\"><span class=\"txt13\" dir=\"ltr\">.{1}]]></product-price-start-regexp>
+            <product-price-end-regexp><![CDATA[(</span>&nbsp;</span></td></form>|</span>&nbsp;<span class)]]></product-price-end-regexp>
+            <product-alter-price-start><![CDATA[]]></product-alter-price-start>
+            <product-alter-price-end><![CDATA[]]></product-alter-price-end>
+            <one-page-price-start><![CDATA[]]></one-page-price-start>
+            <one-page-price-end><![CDATA[]]></one-page-price-end>
+        </product-price-search>
+        
+        <product-link-search>
+            <product-link><![CDATA[http://www.booksrus.co.il/app/Product.asp?Param=]]></product-link>
+            <product-link-start><![CDATA[name="ID" value="]]></product-link-start>
+            <product-link-end><![CDATA[">]]></product-link-end>
+        </product-link-search>
+        
+        <languge-settings>
+            <hebrew-dir><![CDATA[none]]></hebrew-dir>
+        </languge-settings>         
+    </parser-info>
+</root>
+

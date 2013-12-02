@@ -1,0 +1,5 @@
+books/bakbook.xml
+books/bookme.xml
+books/booksrus.xml
+books/top-10.xml
+books/books4sale.xml

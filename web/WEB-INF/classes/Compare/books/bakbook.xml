@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-8" standalone="yes"?>
+
+<!--
+    Document   : bakbook.xml
+    Created on : 21 פברואר 2003, 04:16
+    Author     : administrator
+    Description:
+        Bakbook parsing info.
+-->
+
+<root>
+    <general-info>
+        <name><![CDATA[Bakbook]]></name>
+        <site-url><![CDATA[http://www.bakbook.co.il]]></site-url>
+        <method><![CDATA[get]]></method>
+        <image><![CDATA[pictures/bakbook.gif]]></image>
+    </general-info>
+
+    <addresses>    
+        <search-string><![CDATA[http://www.bakbook.co.il/bookstore/bookstore.asp?choose=s_title&string=]]></search-string>
+        <Search-string-writer><![CDATA[http://www.bakbook.co.il/bookstore/bookstore.asp?choose=s_author&string=]]></Search-string-writer>
+    </addresses>
+    
+    <parser-info>
+    
+       <results-search>
+            <product-not-found><![CDATA[<table border="0" width="476"]]></product-not-found>
+            <results-start-regexp><![CDATA[<table width=100% ><tr bgcolor=ffffff align=right><td><font color=7b3c61 size=4><b>]]></results-start-regexp>
+            <results-end-regexp><![CDATA[<p align="right"><img border="0" src="images/corner/bluecorner_rt.jpg"></p>]]></results-end-regexp>
+        </results-search>
+    
+        <product-name-search>
+            <product-name-start-regexp><![CDATA[category=&id=[0-9]+><b>]]></product-name-start-regexp>
+            <product-name-end-regexp><![CDATA[</b></a><br>]]></product-name-end-regexp>
+        </product-name-search>
+        
+        <product-price-search>
+            <product-price-start-regexp><![CDATA[ונלש]]></product-price-start-regexp>
+            <product-price-end-regexp><![CDATA[ח''ש]]></product-price-end-regexp>
+            <product-alter-price-start><![CDATA[]]></product-alter-price-start>
+            <product-alter-price-end><![CDATA[]]></product-alter-price-end>
+            <one-page-price-start><![CDATA[]]></one-page-price-start>
+            <one-page-price-end><![CDATA[]]></one-page-price-end>
+        </product-price-search>
+        
+        <product-link-search>
+            <product-link><![CDATA[http://www.bakbook.co.il/bookstore.asp?category=&id=]]></product-link>
+            <product-link-start><![CDATA[category=&id=]]></product-link-start>
+            <product-link-end><![CDATA[>]]></product-link-end>
+        </product-link-search>
+        
+        <languge-settings>
+            <hebrew-dir><![CDATA[LTR]]></hebrew-dir>
+        </languge-settings>         
+    </parser-info>
+</root>
+
